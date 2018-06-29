@@ -28,11 +28,9 @@ public class AccountServiceTest {
     @Before
     public void setUp() {
 
-        //given
         client = Client.builder().clientId(1L).firstName("John").secondName("Doe").username("jdoe").build();
         account = Account.builder().accountNumber("0500013M026").client(client).balance(new BigDecimal(100000)).build();
         operation = Operation.builder().account(account).build();
-        //when
     }
 	
 	@Test
