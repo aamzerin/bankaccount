@@ -1,15 +1,34 @@
 package io.aamzerin.kata.bankaccount.constant;
 
+/**
+ * The Enum EntryType.
+ */
 public enum EntryType {
-    CREDIT(1), DEBIT(2);
-	
+
+	/** The credit. */
+	CREDIT(1),
+	/** The debit. */
+	DEBIT(-1);
+
+	/** The entry type. */
 	private Integer entryType;
 
+	/**
+	 * Instantiates a new entry type.
+	 *
+	 * @param type
+	 *            the type
+	 */
 	EntryType(Integer type) {
-        this.entryType = type;
-    }
+		this.entryType = type;
+	}
 
-    public Integer getEntryType() {
-    	return entryType;
-    }
+	/**
+	 * Gets the entry type.
+	 *
+	 * @return the entry type
+	 */
+	public Integer getEntryType() {
+		return entryType;
+	}
 }

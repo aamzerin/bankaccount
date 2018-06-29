@@ -1,4 +1,4 @@
-package io.aamzerin.kata.bankaccount.repository;
+package io.aamzerin.kata.bankaccount.account.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -13,11 +13,12 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import io.aamzerin.kata.bankaccount.domain.Account;
-import io.aamzerin.kata.bankaccount.domain.Client;
+import io.aamzerin.kata.bankaccount.account.domain.Account;
+import io.aamzerin.kata.bankaccount.account.domain.AccountRepository;
+import io.aamzerin.kata.bankaccount.client.domain.Client;
 
 /**
- * Created by ghazala on 01/12/16.
+ * The Class AccountRepositoryTest.
  */
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -26,14 +27,14 @@ public class AccountRepositoryTest {
 	/** The account repository. */
 	@Autowired
 	private AccountRepository accountRepository;
-	
+
 	/** The test entity manager. */
 	@Autowired
 	private TestEntityManager testEntityManager;
-	
+
 	/** The account. */
 	private Account account;
-	
+
 	/** The client. */
 	private Client client;
 
@@ -60,7 +61,7 @@ public class AccountRepositoryTest {
 		Assert.assertNotNull(updatedAccount);
 		assertThat(updatedAccount.getBalance()).isEqualByComparingTo(new BigDecimal(1500L));
 	}
-	
+
 	/**
 	 * Make deposit in account.
 	 */

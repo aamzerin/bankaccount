@@ -1,4 +1,4 @@
-package io.aamzerin.kata.bankaccount.domain;
+package io.aamzerin.kata.bankaccount.client.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,14 +9,17 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 
-
 /**
  * Instantiates a new client.
  *
- * @param clientId the client id
- * @param username the username
- * @param firstName the first name
- * @param secondName the second name
+ * @param clientId
+ *            the client id
+ * @param username
+ *            the username
+ * @param firstName
+ *            the first name
+ * @param secondName
+ *            the second name
  */
 @AllArgsConstructor
 @Builder
@@ -28,13 +31,13 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long clientId;
-	
+
 	/** The username. */
 	private String username;
-	
+
 	/** The first name. */
 	private String firstName;
-	
+
 	/** The second name. */
 	private String secondName;
 

@@ -1,4 +1,4 @@
-package io.aamzerin.kata.bankaccount.repository;
+package io.aamzerin.kata.bankaccount.operation.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.not;
@@ -17,14 +17,19 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import io.aamzerin.kata.bankaccount.account.domain.Account;
+import io.aamzerin.kata.bankaccount.account.domain.AccountRepository;
+import io.aamzerin.kata.bankaccount.client.domain.Client;
 import io.aamzerin.kata.bankaccount.constant.EntryType;
-import io.aamzerin.kata.bankaccount.domain.Account;
-import io.aamzerin.kata.bankaccount.domain.Client;
-import io.aamzerin.kata.bankaccount.domain.Operation;
+import io.aamzerin.kata.bankaccount.operation.domain.Operation;
+import io.aamzerin.kata.bankaccount.operation.domain.OperationRepository;
 
-@RunWith(SpringRunner.class)
+/**
+ * The Class OperationRepositoryTest.
+ */
+@RunWith(SpringJUnit4ClassRunner.class)
 @DataJpaTest
 public class OperationRepositoryTest {
 
@@ -49,6 +54,9 @@ public class OperationRepositoryTest {
 	/** The client. */
 	private Client client;
 
+	/**
+	 * Sets the up.
+	 */
 	@Before
 	public void setUp() {	
 		client = Client.builder().firstName("John").secondName("Doe").build();
@@ -58,6 +66,9 @@ public class OperationRepositoryTest {
 		testEntityManager.persist(account);
 	}
 	
+	/**
+	 * Make credit operation.
+	 */
 	@Test
 	public void makeCreditOperation()
 	{
@@ -79,6 +90,9 @@ public class OperationRepositoryTest {
 		
 	}
 	
+	/**
+	 * Make operation.
+	 */
 	@Test
 	public void makeOperation()
 	{
