@@ -16,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import io.aamzerin.kata.bankaccount.domain.Account;
 import io.aamzerin.kata.bankaccount.domain.Client;
 
-// TODO: Auto-generated Javadoc
 /**
  * Created by ghazala on 01/12/16.
  */
@@ -42,7 +41,7 @@ public class AccountRepositoryTest {
 	 * Inits the.
 	 */
 	@Before
-	public void init() {
+	public void setUp() {
 		client = Client.builder().firstName("John").secondName("Doe").build();
 		account = Account.builder().accountNumber("0500013M026").balance(new BigDecimal(1000L)).client(client).build();
 		testEntityManager.persist(client);

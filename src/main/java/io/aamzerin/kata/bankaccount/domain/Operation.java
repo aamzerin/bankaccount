@@ -42,6 +42,9 @@ public class Operation {
 	/** The amount. */
 	private BigDecimal amount;
 	
+	/** The amount. */
+	private Integer entryType;
+	
 	/** The date. */
 	private LocalDateTime date;
 	
